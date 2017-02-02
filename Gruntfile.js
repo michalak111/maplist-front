@@ -40,6 +40,9 @@ module.exports = function(grunt) {
       target: {
         src:[
           "src/assets/js/source/vendor/jquery-3.1.0.min.js",
+          "src/assets/js/source/vendor/jquery.autocomplete.js",
+          "src/assets/js/source/vendor/featherlight.js",
+          "src/assets/js/source/vendor/featherlight.gallery.js",
         ],
         dest: "src/assets/js/source/vendor.js",
       }

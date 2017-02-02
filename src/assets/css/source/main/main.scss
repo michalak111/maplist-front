@@ -1,0 +1,136 @@
+.maplist-locations{
+  .ml-map{
+    #ml-gmap {
+      height: 100vh;
+      width: 100%;
+    }
+    .ml-gotolist{
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .ml-location-list {
+    position: absolute;
+    top: 0;
+    //left: -20%;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    background: #eaeaea;
+    box-sizing: border-box;
+    padding: 15px;
+    transition: all .4s ease;
+    max-height: 100%;
+    overflow-y: scroll;
+    &.list-active {
+      left: 0;
+    }
+    .ml-locations {
+      &.region-selections-active {
+        li {
+          display: none;
+
+          &.selected-region {
+            display: block;
+          }
+        }
+      }
+
+      .ml-entry-location {
+        .ml-entry-more-details {
+          display: none;
+          &.show-details {
+            display: block;
+          }
+
+          .ml-entry-gallery {
+            a {
+              position: relative;
+              display: inline-block;
+              &:nth-of-type(n+2) {
+                display: none;
+              }
+              @keyframes example {
+                from {
+                  width: 0;
+                  height: 0;
+                }
+                to {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+
+              &:hover {
+                &:before {
+                  content: '';
+                  top:50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  animation-name: example;
+                  animation-duration: 0.5s;
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  background: rgba(0,0,0,0.3);
+                }
+                &:after {
+                  content: '+';
+                  text-align: center;
+                  font-weight: bold;
+                  line-height: 21px;
+                  width: 25px;
+                  height: 25px;
+                  box-sizing: border-box;
+                  border: 2px solid #fff;
+                  border-radius: 50%;
+                  color: #fff;
+                  position: absolute;
+                  top:50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  opacity: 0.8;
+                }
+              }
+
+              img {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+    .ml-location-select{
+      margin:25px 0px;
+      select {
+        width: 200px;
+        margin: 0 0 0 10px;
+      }
+    }
+
+    .ml-search-locations-wrapper {
+      clear: both;
+      input {
+        width: 200px;
+        margin: 0 0 0 18px;
+      }
+    }
+  }
+}
+
+.autocomplete-suggestions {
+  width: 204px;
+  background: #fff;
+  border: 1px solid #afaeae;
+  max-width: 202px;
+
+  .autocomplete-suggestion {
+    &.autocomplete-selected {
+      background: #eaeaea;
+    }
+  }
+}
