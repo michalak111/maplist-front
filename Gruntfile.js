@@ -65,7 +65,7 @@ module.exports = function(grunt) {
           'src/assets/js/source/main.js',
           'src/assets/css/source/{,*/}*.scss'
         ],
-        tasks: ['jshint', 'sass'],
+        tasks: ['sass'],
         options: {
           livereload: true,
         },
@@ -100,6 +100,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-express');
   grunt.loadNpmTasks('grunt-open');
 
-  grunt.registerTask("default", ['jshint','concat','sass']);
+  grunt.registerTask("default", ['concat','uglify','sass']);
   grunt.registerTask("dev", ['express','open','watch:source']);
 };

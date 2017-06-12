@@ -647,8 +647,64 @@ textarea {
   /* 2 */
 }
 
+.maplist-locations .ml-location-list .ml-location-select select, .maplist-locations .ml-location-list .ml-search-locations-wrapper input {
+  width: 150px;
+  height: 25px;
+  border: 1px solid #666;
+  background: #fff;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.maplist-locations .ml-btn {
+  background: #fff;
+  color: #000;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-size: 12px;
+}
+.maplist-locations label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  width: 50px;
+  display: inline-block;
+}
+.maplist-locations ol, .maplist-locations ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.maplist-locations h2 {
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+}
+.maplist-locations li {
+  padding: 0 0 0 10px;
+  position: relative;
+}
+.maplist-locations li:before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #000;
+  top: 5px;
+  left: 0;
+}
+
+.maplist-locations {
+  max-width: 100%;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: block;
+}
 .maplist-locations .ml-map #ml-gmap {
-  height: 100vh;
+  height: 450px;
   width: 100%;
 }
 .maplist-locations .ml-map .ml-gotolist {
@@ -660,18 +716,31 @@ textarea {
 .maplist-locations .ml-location-list {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 400px;
+  left: -250px;
+  width: 250px;
   height: 100%;
   background: #eaeaea;
   box-sizing: border-box;
-  padding: 15px;
+  padding: 10px 5px;
   transition: all .4s ease;
   max-height: 100%;
   overflow-y: scroll;
 }
+.maplist-locations .ml-location-list::-webkit-scrollbar {
+  width: 4px;
+}
+.maplist-locations .ml-location-list::-webkit-scrollbar-track {
+  background: #fff;
+}
+.maplist-locations .ml-location-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 .maplist-locations .ml-location-list.list-active {
   left: 0;
+}
+.maplist-locations .ml-location-list .ml-locations {
+  margin-top: 20px;
 }
 .maplist-locations .ml-location-list .ml-locations.region-selections-active li {
   display: none;
@@ -679,11 +748,46 @@ textarea {
 .maplist-locations .ml-location-list .ml-locations.region-selections-active li.selected-region {
   display: block;
 }
+.maplist-locations .ml-location-list .ml-locations .ml-entry-location {
+  margin: 0 0 10px 0;
+  line-height: 10px;
+}
+.maplist-locations .ml-location-list .ml-locations .ml-entry-location h2 {
+  float: left;
+  margin: 0 5px 0 0;
+  font-size: 16px;
+  color: #000;
+}
+.maplist-locations .ml-location-list .ml-locations .ml-entry-location h2:after {
+  content: '';
+  clear: both;
+}
+.maplist-locations .ml-location-list .ml-locations .ml-entry-location .ml-show-location-details {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.maplist-locations .ml-location-list .ml-locations .ml-entry-location .ml-show-location-details:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 3px 0 3px;
+  border-color: #000000 transparent transparent transparent;
+  position: absolute;
+  top: 7px;
+  left: 6px;
+}
 .maplist-locations .ml-location-list .ml-locations .ml-entry-location .ml-entry-more-details {
   display: none;
 }
 .maplist-locations .ml-location-list .ml-locations .ml-entry-location .ml-entry-more-details.show-details {
   display: block;
+}
+.maplist-locations .ml-location-list .ml-locations .ml-entry-location .ml-entry-more-details p {
+  font-size: 14px;
+  line-height: initial;
+  margin: 2px 0;
 }
 .maplist-locations .ml-location-list .ml-locations .ml-entry-location .ml-entry-more-details .ml-entry-gallery a {
   position: relative;
@@ -735,18 +839,10 @@ textarea {
   display: block;
 }
 .maplist-locations .ml-location-list .ml-location-select {
-  margin: 25px 0px;
-}
-.maplist-locations .ml-location-list .ml-location-select select {
-  width: 200px;
-  margin: 0 0 0 10px;
+  margin: 5px 0px;
 }
 .maplist-locations .ml-location-list .ml-search-locations-wrapper {
   clear: both;
-}
-.maplist-locations .ml-location-list .ml-search-locations-wrapper input {
-  width: 200px;
-  margin: 0 0 0 18px;
 }
 
 .autocomplete-suggestions {

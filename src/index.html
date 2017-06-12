@@ -4,117 +4,125 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
 </head>
 <body>
-<div class="maplist-locations">
-    <section class="ml-map">
-        <div id="ml-gmap"></div>
-        <button class="ml-gotolist">Pokaż liste</button>
-    </section>
-    <section class="ml-location-list">
-        <div class="ml-search-locations-wrapper">
-            <label for="ml-search-locations">Search locations:</label>
-            <input type="text" class="ml-search-locations" id="ml-search-locations">
-        </div>
-        <nav class="ml-location-select">
-            <label for="ml-location-region">Show from region:</label>
-            <select id="ml-location-region">
-                <option value="All">All</option>
-                <option value="Kraków">Kraków</option>
-                <option value="Orawa">Orawa</option>
-            </select>
-        </nav>
-        <ol class="ml-locations">
-            <li class="ml-entry-location" data-lat="50.092619" data-lng="19.928510" data-place="Uczelnia" data-cat="Kraków">
-                <h2 class="ml-entry-name">Uczelnia (Krk)</h2>
-                <button class="ml-show-location-details">Rozwiń</button>
-                <div class="ml-entry-more-details">
-                    <p class="ml-entry-address">Przykładowy adres.</p>
-                    <p class="ml-entry-description">
-                        Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
-                        Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
-                        Gdy się uczyli.
-                    </p>
-                    <div class="ml-entry-gallery" data-featherlight data-featherlight-gallery data-featherlight-filter="a">
-                        <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
-                        <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
-                        <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
+<style>
+    .container {
+        width: 1200px;
+        margin: 200px auto;
+    }
+</style>
+<div class="container">
+    <div class="maplist-locations">
+        <section class="ml-map">
+            <div id="ml-gmap"></div>
+            <button class="ml-btn ml-gotolist">Pokaż liste</button>
+        </section>
+        <section class="ml-location-list">
+            <div class="ml-search-locations-wrapper">
+                <label for="ml-search-locations">Search:</label>
+                <input type="text" class="ml-search-locations" id="ml-search-locations">
+            </div>
+            <nav class="ml-location-select">
+                <label for="ml-location-region">Filter:</label>
+                <select id="ml-location-region">
+                    <option value="All">All</option>
+                    <option value="Kraków">Kraków</option>
+                    <option value="Orawa">Orawa</option>
+                </select>
+            </nav>
+            <ol class="ml-locations">
+                <li class="ml-entry-location" data-lat="50.092619" data-lng="19.928510" data-place="Uczelnia" data-cat="Kraków">
+                    <h2 class="ml-entry-name">Uczelnia (Krk)</h2>
+                    <button class="ml-btn ml-show-location-details"></button>
+                    <div class="ml-entry-more-details">
+                        <p class="ml-entry-address">Przykładowy adres.</p>
+                        <p class="ml-entry-description">
+                            Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
+                            Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
+                            Gdy się uczyli.
+                        </p>
+                        <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
+                            <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
+                            <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
+                            <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="ml-entry-location" data-lat="49.504721" data-lng="19.604409" data-place="Lipnica Wielka" data-cat="Orawa">
-                <h2 class="ml-entry-name">Lipnica Wielka (Orawa)</h2>
-                <button class="ml-show-location-details">Rozwiń</button>
-                <div class="ml-entry-more-details">
-                    <p class="ml-entry-address">Przykładowy adres.</p>
-                    <p class="ml-entry-description">
-                        Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
-                        Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
-                        Gdy się uczyli.
-                    </p>
-                    <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
-                        <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
-                        <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
-                        <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
+                </li>
+                <li class="ml-entry-location" data-lat="49.504721" data-lng="19.604409" data-place="Lipnica Wielka" data-cat="Orawa">
+                    <h2 class="ml-entry-name">Lipnica Wielka (Orawa)</h2>
+                    <button class="ml-btn ml-show-location-details"></button>
+                    <div class="ml-entry-more-details">
+                        <p class="ml-entry-address">Przykładowy adres.</p>
+                        <p class="ml-entry-description">
+                            Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
+                            Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
+                            Gdy się uczyli.
+                        </p>
+                        <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
+                            <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
+                            <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
+                            <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="ml-entry-location" data-lat="50.084120" data-lng="19.895045" data-place="Dom" data-cat="Kraków">
-                <h2 class="ml-entry-name">Dom (Krk)</h2>
-                <button class="ml-show-location-details">Rozwiń</button>
-                <div class="ml-entry-more-details">
-                    <p class="ml-entry-address">Przykładowy adres.</p>
-                    <p class="ml-entry-description">
-                        Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
-                        Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
-                        Gdy się uczyli.
-                    </p>
-                    <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
-                        <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
-                        <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
-                        <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
+                </li>
+                <li class="ml-entry-location" data-lat="50.084120" data-lng="19.895045" data-place="Dom" data-cat="Kraków">
+                    <h2 class="ml-entry-name">Dom (Krk)</h2>
+                    <button class="ml-btn ml-show-location-details"></button>
+                    <div class="ml-entry-more-details">
+                        <p class="ml-entry-address">Przykładowy adres.</p>
+                        <p class="ml-entry-description">
+                            Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
+                            Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
+                            Gdy się uczyli.
+                        </p>
+                        <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
+                            <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
+                            <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
+                            <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="ml-entry-location" data-lat="50.078172" data-lng="19.935814" data-place="Praca" data-cat="Kraków">
-                <h2 class="ml-entry-name">Praca (Krk)</h2>
-                <button class="ml-show-location-details">Rozwiń</button>
-                <div class="ml-entry-more-details">
-                    <p class="ml-entry-address">Przykładowy adres.</p>
-                    <p class="ml-entry-description">
-                        Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
-                        Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
-                        Gdy się uczyli.
-                    </p>
-                    <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
-                        <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
-                        <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
-                        <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
+                </li>
+                <li class="ml-entry-location" data-lat="50.078172" data-lng="19.935814" data-place="Praca" data-cat="Kraków">
+                    <h2 class="ml-entry-name">Praca (Krk)</h2>
+                    <button class="ml-btn ml-show-location-details"></button>
+                    <div class="ml-entry-more-details">
+                        <p class="ml-entry-address">Przykładowy adres.</p>
+                        <p class="ml-entry-description">
+                            Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
+                            Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
+                            Gdy się uczyli.
+                        </p>
+                        <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
+                            <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
+                            <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
+                            <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="ml-entry-location" data-lat="49.496969" data-lng="19.708390" data-place="Jabłonka" data-cat="Orawa">
-                <h2 class="ml-entry-name">Jabłonka (Orawa)</h2>
-                <button class="ml-show-location-details">Rozwiń</button>
-                <div class="ml-entry-more-details">
-                    <p class="ml-entry-address">Przykładowy adres.</p>
-                    <p class="ml-entry-description">
-                        Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
-                        Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
-                        Gdy się uczyli.
-                    </p>
-                    <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
-                        <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
-                        <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
-                        <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
+                </li>
+                <li class="ml-entry-location" data-lat="49.496969" data-lng="19.708390" data-place="Jabłonka" data-cat="Orawa">
+                    <h2 class="ml-entry-name">Jabłonka (Orawa)</h2>
+                    <button class="ml-btn ml-show-location-details"></button>
+                    <div class="ml-entry-more-details">
+                        <p class="ml-entry-address">Przykładowy adres.</p>
+                        <p class="ml-entry-description">
+                            Litwo! Ojczyzno moja! Ty jesteś jak zdrowie.
+                            Nazywał się spory w moim dom i w lewo, on może nas powrócisz cudem
+                            Gdy się uczyli.
+                        </p>
+                        <div class="ml-entry-gallery" data-featherlight-gallery data-featherlight-filter="a">
+                            <a href="assets/img/images/2.jpg"><img width="200" src="assets/img/images/2.jpg"></a>
+                            <a href="assets/img/images/1.jpg"><img width="200" src="assets/img/images/1.jpg"></a>
+                            <a href="assets/img/images/3.jpg"><img width="200" src="assets/img/images/3.jpg"></a>
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ol>
-    </section>
+                </li>
+            </ol>
+        </section>
+    </div>
 </div>
 </body>
 <script type="text/javascript" src="assets/js/source/vendor.js"></script>
 <script type="text/javascript" src="assets/js/source/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH4lERbBgrvHYWJZoDy_vgptl6dX8_ydQ"></script>
 </html>
